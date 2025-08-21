@@ -8,6 +8,7 @@ export const calculatedSlice = createSlice({
     fine_a: "",
     coarse_a: "",
     rat: "",
+    bag:""
   },
   reducers:{
     addWater: (state,action)=>{
@@ -24,6 +25,9 @@ export const calculatedSlice = createSlice({
     },
     addRat:(state,action)=>{
       state.rat = action.payload;
+    },
+    addBag:(state,action)=>{
+      state.bag = action.payload;
     }
   }
 });

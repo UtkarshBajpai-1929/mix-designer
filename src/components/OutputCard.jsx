@@ -5,7 +5,7 @@ import Piechart from "./Piechart";
 export default function OutputCard() {
   const conc_volume = useSelector((store) => store.input.volume);
   const water_cont = useSelector((store) => store.calculation.water_content);
-  const cem_req = useSelector((store) => store.calculation.cement_req);
+  const cem_req = useSelector((store) => store.calculation.bag);
   const fine_a = useSelector((store) => store.calculation.fine_a);
   const coarse_a = useSelector((store) => store.calculation.coarse_a);
   const rat = useSelector((store) => store.calculation.rat);
@@ -30,7 +30,7 @@ export default function OutputCard() {
               <div className="card-body text-center">
                 <h5 className="card-title">Cement Required</h5>
                 <p className="card-text fs-4 fw-bold text-success">
-                  {cem_req} kg
+                  {cem_req} Bags
                 </p>
               </div>
             </div>

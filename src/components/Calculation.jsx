@@ -6,7 +6,6 @@ export default function Calculation() {
   const agg_size = useSelector((store) => store.input.aggregate);
   const slump = useSelector((store) => store.input.slump);
   const adm = useSelector((store) => store.input.adm);
-  console.log(adm);
   const dispatch = useDispatch();
   if (agg_size == 10) {
     realCal(208, 0.03, 0.5);
@@ -16,13 +15,23 @@ export default function Calculation() {
     realCal(165, 0.01, 0.66);
   }
   function realCal(W_base, V_air, agg_fraction) {
+    if (conc_volume < 0 || 1 < wc_ratio || wc_ratio < 0 || slump < 0) {
+      dispatch(calculatedActions.addCement("Error"));
+      dispatch(calculatedActions.addCoarse("Error"));
+      dispatch(calculatedActions.addFine("Error"));
+      dispatch(calculatedActions.addRat("Error"));
+      dispatch(calculatedActions.addWater("Error"));
+      return;
+    }
     const water_req =
       W_base * conc_volume * (1 + (0.03 * (slump - 50)) / 25) * (1 - adm / 100);
     const V_w = water_req / 1000;
     dispatch(calculatedActions.addWater(water_req.toFixed(2)));
 
     const cement_req = water_req / wc_ratio;
+    const cement_bag = cement_req/50;
     const V_c = cement_req / 3150;
+    dispatch(calculatedActions.addBag(cement_bag.toFixed(2)));
     dispatch(calculatedActions.addCement(cement_req.toFixed(2)));
 
     const totalagg_V =

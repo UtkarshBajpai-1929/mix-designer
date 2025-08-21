@@ -28,7 +28,7 @@ a:focus {
   box-shadow:0.5px 0 2px black;
   padding: 0 8px;
   z-index: 1000;
-  background-color: rgb(241, 240, 240);
+  background-color: rgba(241, 240, 240, 0.9);
 }
 .logo-img {
   width: 80px; 

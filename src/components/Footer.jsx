@@ -9,7 +9,7 @@ export default function Footer() {
           <h5>About us: </h5>
           <p>This Mix Design Calculator helps civil engineers, students, and professionals quickly calculate concrete mix proportions as per standard codes.</p> 
           <p>Designed for accuracy and ease of use.</p>
-        
+          <p>By Utkarsh Bajpai (Civil Engineering student at IIT Dhanbad)</p>
         </div>
         {" "}
         <div class="col-md-4 d-flex justify-content-center align-items-center">
@@ -19,11 +19,11 @@ export default function Footer() {
         </div>{" "}
         <ul class="nav col-md-4 justify-content-center list-unstyled d-flex">
           {" "}
-          <Link>
+          <a href="https://www.instagram.com/utkarsh_bajpai45/" target="blank">
           <li class="ms-3">
          <FaInstagram />
           </li>{" "}
-          </Link>
+          </a>
           <Link>
           <li class="ms-3">
           <FaFacebook />
