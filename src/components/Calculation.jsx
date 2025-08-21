@@ -30,12 +30,12 @@ export default function Calculation() {
     agg_fraction = agg_fraction +change_s+change_w;
 
     const V_coarse = totalagg_V * agg_fraction;
-    const coarse_req = Math.floor(2680 * V_coarse) + 1;
-    dispatch(calculatedActions.addCoarse(coarse_req));
+    const coarse_req = 2680 * V_coarse;
+    dispatch(calculatedActions.addCoarse(coarse_req.toFixed(2)));
 
     const V_fine = totalagg_V - V_coarse;
-    const fine_req = Math.floor(2450 * V_fine) + 1;
-    dispatch(calculatedActions.addFine(fine_req));
+    const fine_req = 2450 * V_fine;
+    dispatch(calculatedActions.addFine(fine_req.toFixed(2)));
 
     const rat = `1 : ${(V_fine/V_c).toFixed(2)} : ${(V_coarse/V_c).toFixed(2)}`
     dispatch(calculatedActions.addRat(rat))
