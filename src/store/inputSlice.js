@@ -5,7 +5,8 @@ export const inputSlice = createSlice({
         volume: "",
         ratio:"",
         slump:"",
-        aggregate:""
+        aggregate:"",
+        adm:""
     },
     reducers:{
         addVolume: (state,action)=>{
@@ -20,6 +21,9 @@ export const inputSlice = createSlice({
          addAggregate: (state,action)=>{
             state.aggregate= action.payload;
         },
+        addAdm:(state,action)=>{
+            state.adm = action.payload;
+        }
       
     }
 });

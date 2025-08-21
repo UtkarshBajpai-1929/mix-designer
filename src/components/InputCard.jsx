@@ -8,6 +8,7 @@ export default function InputCard() {
   const wc_ratio = useRef();
   const agg_size = useRef();
   const slump = useRef();
+  const adm = useRef();
 
   const dispatch = useDispatch();
 
@@ -16,10 +17,12 @@ export default function InputCard() {
     dispatch(inputActions.addRatio(wc_ratio.current.value));
     dispatch(inputActions.addSlump(slump.current.value));
     dispatch(inputActions.addAggregate(agg_size.current.value));
+    dispatch(inputActions.addAdm(adm.current.value));
     conc_vol.current.value = "";
     wc_ratio.current.value = "";
     slump.current.value = "";
     agg_size.current.value = "";
+    adm.current.value = "";
   };
 
   return (
@@ -74,6 +77,15 @@ export default function InputCard() {
           </select>
         </div>
 
+                <div className="mb-3">
+          <label className="form-label">Admixtures </label>
+          <select ref={adm} className="form-select" required>
+            <option value="">Chose admixture</option>
+            <option value="10">Plasticisers (10% reduction in water)</option>
+            <option value="25">Super-Plasticiser (25% reduction in water)</option>
+            <option value="0">No Admixture</option>
+          </select>
+        </div>
         <div className="d-grid mt-4">
           <Link to="/output" style={{ display: "block" }}>
             <button

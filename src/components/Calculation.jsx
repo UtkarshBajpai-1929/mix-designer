@@ -5,6 +5,8 @@ export default function Calculation() {
   const wc_ratio = useSelector((store) => store.input.ratio);
   const agg_size = useSelector((store) => store.input.aggregate);
   const slump = useSelector((store) => store.input.slump);
+  const adm = useSelector((store)=> store.input.adm);
+  console.log(adm);
   const dispatch = useDispatch();
   if (agg_size == 10) {
     realCal(208, 0.03, 0.5);
@@ -14,7 +16,7 @@ export default function Calculation() {
     realCal(165, 0.01, 0.66);
   }
   function realCal(W_base, V_air, agg_fraction) {
-    const water_req = W_base * conc_volume * (1 + (0.03 * (slump - 50)) / 25);
+    const water_req = (W_base * conc_volume * (1 + (0.03 * (slump - 50)) / 25))*(1-adm/100);
     const V_w = water_req / 1000;
     dispatch(calculatedActions.addWater(Math.floor(water_req)));
 
