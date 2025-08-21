@@ -18,11 +18,11 @@ export default function Calculation() {
   function realCal(W_base, V_air, agg_fraction) {
     const water_req = (W_base * conc_volume * (1 + (0.03 * (slump - 50)) / 25))*(1-adm/100);
     const V_w = water_req / 1000;
-    dispatch(calculatedActions.addWater(Math.floor(water_req)));
+    dispatch(calculatedActions.addWater(water_req.toFixed(2)));
 
-    const cement_req = Math.floor(water_req / wc_ratio) + 1;
+    const cement_req = water_req / wc_ratio;
     const V_c = cement_req / 3150;
-    dispatch(calculatedActions.addCement(cement_req));
+    dispatch(calculatedActions.addCement(cement_req.toFixed(2)));
 
     const totalagg_V = (1 - (V_air + V_c/conc_volume + V_w/conc_volume)) * conc_volume;
     const change_s = (0.01 * (50 - slump)) / 25;
