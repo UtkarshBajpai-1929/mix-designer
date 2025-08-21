@@ -100,7 +100,7 @@ cursor: pointer;
   margin-bottom: 2rem;
 }
 #hero-btn{
-  width: 20vw;
+  min-width:fit-content;
   height: auto;
   font-size: larger;
   margin-top: 1em;
