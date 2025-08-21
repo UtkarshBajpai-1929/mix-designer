@@ -92,7 +92,7 @@ cursor: pointer;
   width: 100%;
 }
 .hero-container{
-  background-image: url("images/bg2.png");
+  background-image: url("/images/cnfback.png");
   width: auto;
   height: 100vh;
   background-size: cover;

@@ -7,6 +7,7 @@ export const calculatedSlice = createSlice({
     cement_req: "",
     fine_a: "",
     coarse_a: "",
+    rat: "",
   },
   reducers:{
     addWater: (state,action)=>{
@@ -21,6 +22,9 @@ export const calculatedSlice = createSlice({
       addCoarse: (state,action)=>{
       state.coarse_a = action.payload;
     },
+    addRat:(state,action)=>{
+      state.rat = action.payload;
+    }
   }
 });
 export const calculatedActions = calculatedSlice.actions;
