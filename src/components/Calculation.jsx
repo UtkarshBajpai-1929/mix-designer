@@ -28,11 +28,11 @@ export default function Calculation() {
     agg_fraction = agg_fraction +change_s+change_w;
 
     const V_coarse = totalagg_V * agg_fraction;
-    const coarse_req = Math.floor(2700 * V_coarse) + 1;
+    const coarse_req = Math.floor(2680 * V_coarse) + 1;
     dispatch(calculatedActions.addCoarse(coarse_req));
 
     const V_fine = totalagg_V - V_coarse;
-    const fine_req = Math.floor(2650 * V_fine) + 1;
+    const fine_req = Math.floor(2450 * V_fine) + 1;
     dispatch(calculatedActions.addFine(fine_req));
 
     const rat = `1 : ${(V_fine/V_c).toFixed(2)} : ${(V_coarse/V_c).toFixed(2)}`
