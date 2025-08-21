@@ -5,7 +5,7 @@ export default function Calculation() {
   const wc_ratio = useSelector((store) => store.input.ratio);
   const agg_size = useSelector((store) => store.input.aggregate);
   const slump = useSelector((store) => store.input.slump);
-  const adm = useSelector((store)=> store.input.adm);
+  const adm = useSelector((store) => store.input.adm);
   console.log(adm);
   const dispatch = useDispatch();
   if (agg_size == 10) {
@@ -16,7 +16,8 @@ export default function Calculation() {
     realCal(165, 0.01, 0.66);
   }
   function realCal(W_base, V_air, agg_fraction) {
-    const water_req = (W_base * conc_volume * (1 + (0.03 * (slump - 50)) / 25))*(1-adm/100);
+    const water_req =
+      W_base * conc_volume * (1 + (0.03 * (slump - 50)) / 25) * (1 - adm / 100);
     const V_w = water_req / 1000;
     dispatch(calculatedActions.addWater(water_req.toFixed(2)));
 
@@ -24,10 +25,11 @@ export default function Calculation() {
     const V_c = cement_req / 3150;
     dispatch(calculatedActions.addCement(cement_req.toFixed(2)));
 
-    const totalagg_V = (1 - (V_air + V_c/conc_volume + V_w/conc_volume)) * conc_volume;
+    const totalagg_V =
+      (1 - (V_air + V_c / conc_volume + V_w / conc_volume)) * conc_volume;
     const change_s = (0.01 * (50 - slump)) / 25;
     const change_w = 0.2 * (wc_ratio - 0.5);
-    agg_fraction = agg_fraction +change_s+change_w;
+    agg_fraction = agg_fraction + change_s + change_w;
 
     const V_coarse = totalagg_V * agg_fraction;
     const coarse_req = 2680 * V_coarse;
@@ -37,7 +39,9 @@ export default function Calculation() {
     const fine_req = 2450 * V_fine;
     dispatch(calculatedActions.addFine(fine_req.toFixed(2)));
 
-    const rat = `1 : ${(V_fine/V_c).toFixed(2)} : ${(V_coarse/V_c).toFixed(2)}`
-    dispatch(calculatedActions.addRat(rat))
+    const rat = `1 : ${(V_fine / V_c).toFixed(2)} : ${(V_coarse / V_c).toFixed(
+      2
+    )}`;
+    dispatch(calculatedActions.addRat(rat));
   }
 }

@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import Calculation from "./Calculation";
+import Piechart from "./Piechart";
 
 export default function OutputCard() {
   const conc_volume = useSelector((store) => store.input.volume);
@@ -72,6 +73,23 @@ export default function OutputCard() {
                   {" "}
                   {conc_volume} m³
                 </p>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-12">
+            <div className="card shadow-lg border-0">
+              <div
+                className="card-body d-flex justify-content-center align-items-center"
+                style={{ minHeight: "350px" }}
+              >
+                <div>
+                  <h4 className="card-title text-center">
+                    Mix Proportion (Pie View)
+                  </h4>
+                  <div className="d-flex justify-content-center align-items-center">
+                    <Piechart />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
