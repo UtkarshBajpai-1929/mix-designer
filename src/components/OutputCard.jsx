@@ -1,6 +1,8 @@
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import Calculation from "./Calculation";
 import Piechart from "./Piechart";
+import FinalEstimate from "./FinalEstimate";
 
 export default function OutputCard() {
   const conc_volume = useSelector((store) => store.input.volume);
@@ -93,6 +95,13 @@ export default function OutputCard() {
               </div>
             </div>
           </div>
+          <div className="col-md-12 text-center mt-4">
+            <Link to="/estimate">
+  <button className="btn btn-lg btn-primary shadow">
+    Get Final Estimate
+  </button>
+  </Link>
+</div>
         </div>
       </div>
     </>

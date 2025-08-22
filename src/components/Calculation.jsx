@@ -8,11 +8,11 @@ export default function Calculation() {
   const adm = useSelector((store) => store.input.adm);
   const dispatch = useDispatch();
   if (agg_size == 10) {
-    realCal(208, 0.03, 0.5);
+    realCal(208, 0.03, 0.46);
   } else if (agg_size == 20) {
     realCal(186, 0.02, 0.62);
   } else if (agg_size == 40) {
-    realCal(165, 0.01, 0.66);
+    realCal(165, 0.01, 0.71);
   }
   function realCal(W_base, V_air, agg_fraction) {
     if (conc_volume < 0 || 1 < wc_ratio || wc_ratio < 0 || slump < 0) {

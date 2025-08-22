@@ -10,6 +10,7 @@ import InputCard from "./components/InputCard.jsx";
 import Hero from "./components/Hero.jsx";
 import inputStore from "./store/index.js";
 import OutputCard from "./components/OutputCard.jsx";
+import FinalEstimate from "./components/FinalEstimate.jsx";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
         {
         path: "output",
         element:<OutputCard/>
+      },
+           {
+        path: "estimate",
+        element:<FinalEstimate/>
       },
     ],
   },
