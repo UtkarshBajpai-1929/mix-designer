@@ -7,6 +7,7 @@ export default function FinalEstimate() {
   const adm = useSelector((store) => store.input.adm);
    const conc_volume = useSelector((store) => store.input.volume);
      const water_cont = useSelector((store) => store.calculation.water_content);
+     let idd = "estimate-table"; 
   return (
     <div className="container py-5" id="estimate-table">
       
@@ -46,7 +47,7 @@ export default function FinalEstimate() {
                   <tr>
               <td>4</td>
               <td>Admixture</td>
-              <td>{conc_volume*1.5*1000} ml</td>
+              <td>{(cem_req*0.02*1000/1.145).toFixed(0)} ml</td>
               <td>--</td>
             </tr> :null
             }
@@ -60,7 +61,7 @@ export default function FinalEstimate() {
           </tbody>
         </table>
       </div>
-      <PrintButton />
+      <PrintButton idd={idd} />
     </div>
   );
 }

@@ -9,6 +9,7 @@ export default function InputCard() {
   const agg_size = useRef();
   const slump = useRef();
   const adm = useRef();
+  const sand_zone = useRef();
 
   const dispatch = useDispatch();
 
@@ -18,6 +19,7 @@ export default function InputCard() {
     dispatch(inputActions.addSlump(slump.current.value));
     dispatch(inputActions.addAggregate(agg_size.current.value));
     dispatch(inputActions.addAdm(adm.current.value));
+    dispatch(inputActions.addSand(sand_zone.current.value));
     conc_vol.current.value = "";
     wc_ratio.current.value = "";
     slump.current.value = "";
@@ -65,6 +67,17 @@ export default function InputCard() {
             placeholder="Enter slump"
             required
           />
+        </div>
+
+            <div className="mb-3">
+          <label className="form-label">Sand Zone</label>
+          <select ref={sand_zone} className="form-select" required>
+            <option value="">Select sand zone</option>
+            <option value="1">ZONE I</option>
+            <option value="2">ZONE II</option>
+            <option value="3">ZONE III</option>
+            <option value="4">ZONE IV</option>
+          </select>
         </div>
 
         <div className="mb-3">

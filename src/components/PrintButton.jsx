@@ -1,6 +1,6 @@
-export default function PrintButton(){
+export default function PrintButton({idd}){
    const handlePrint = () => {
-    const printContent = document.getElementById("estimate-table");
+    const printContent = document.getElementById(idd);
     const WindowPrint = window.open("", "", "width=1080,height=720");
           WindowPrint.document.write(`
       <html>

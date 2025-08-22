@@ -7,6 +7,7 @@ export default function Footer() {
       <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
         <div className="about">
           <h5>About us: </h5>
+              <h6>All the calculations in the website are based on IS codes. So for more information refer IS Code.</h6>
           <p>This Mix Design Calculator helps civil engineers, students, and professionals quickly calculate concrete mix proportions as per standard codes.</p> 
           <p>Designed for accuracy and ease of use.</p>
           <p>By Utkarsh Bajpai (Civil Engineering student at IIT Dhanbad)</p>

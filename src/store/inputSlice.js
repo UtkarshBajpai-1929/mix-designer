@@ -6,7 +6,8 @@ export const inputSlice = createSlice({
         ratio:"",
         slump:"",
         aggregate:"",
-        adm:""
+        adm:"",
+        sand_zone:"",
     },
     reducers:{
         addVolume: (state,action)=>{
@@ -23,6 +24,9 @@ export const inputSlice = createSlice({
         },
         addAdm:(state,action)=>{
             state.adm = action.payload;
+        },
+        addSand:(state,action)=>{
+            state.sand_zone =action.payload;
         }
       
     }

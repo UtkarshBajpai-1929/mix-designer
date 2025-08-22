@@ -2,7 +2,6 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Calculation from "./Calculation";
 import Piechart from "./Piechart";
-import FinalEstimate from "./FinalEstimate";
 
 export default function OutputCard() {
   const conc_volume = useSelector((store) => store.input.volume);
@@ -15,7 +14,7 @@ export default function OutputCard() {
     <>
       <Calculation />
       <div className="container mt-5">
-        <h2 className="text-center mb-4">Mix Design Output</h2>
+        <h2 className="text-center mb-4">Mix Design Output <h6 style={{color:"blue", textDecoration:"underline"}}><br/><a href="https://law.resource.org/pub/in/bis/S03/is.10262.2009.pdf" target="_blank">Refer IS 10262</a></h6></h2>
         <div className="row g-4">
           <div className="col-md-6">
             <div className="card shadow-lg border-0">
