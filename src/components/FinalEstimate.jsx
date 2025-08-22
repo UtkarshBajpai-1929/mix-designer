@@ -47,12 +47,12 @@ export default function FinalEstimate() {
                   <tr>
               <td>4</td>
               <td>Admixture</td>
-              <td>{(cem_req*0.02*1000/1.145).toFixed(0)} ml</td>
+              <td>{(cem_req*1000/1.145).toFixed(0)} ml</td>
               <td>--</td>
             </tr> :null
             }
                <tr>
-              <td>4</td>
+              <td>5</td>
               <td>Water</td>
               <td>{water_cont} Litres</td>
               <td>{water_cont} kg</td>
